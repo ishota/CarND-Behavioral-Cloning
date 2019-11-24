@@ -1,6 +1,6 @@
-import os
 from load_data import *
 from build_model import *
+from get_generater import *
 from inspect import currentframe
 from keras.models import Sequential
 from keras.layers import Lambda, Conv2D, Dropout, Flatten, Dense
@@ -11,12 +11,13 @@ def train_model():
 
 
 def input_param(names, value):
+    """
+    :param names:
+    :param value:
+    :return:
+    """
     print('{} = {}'.format(names, value))
     return value
-
-
-def main():
-    pass
 
 
 if __name__ == '__main__':
@@ -28,8 +29,11 @@ if __name__ == '__main__':
     valid_frac = input_param('proportion of validation', 0.2)
     print("=" * 20)
 
-    create_data_set(data_dir, csv_name, valid_frac)
+    x_train, y_train, x_valid, y_valid = create_data_set(data_dir, csv_name, valid_frac)
 
     build_model(input_shape)
 
-    main()
+    generate_batch(x_train, y_train, input_shape)
+
+
+
