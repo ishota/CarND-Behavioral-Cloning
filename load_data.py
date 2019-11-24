@@ -4,11 +4,18 @@ from sklearn.model_selection import train_test_split
 
 
 def create_data_set(data_dir, csv_name, valid_size_frac):
+    """
 
-    dat_aset = pd.read_csv(os.path.join(data_dir, csv_name))
+    :param data_dir:
+    :param csv_name:
+    :param valid_size_frac:
+    :return:
+    """
 
-    x = dat_aset[['center', 'left', 'right']].values
-    y = dat_aset['steering'].values
+    data_set = pd.read_csv(os.path.join(data_dir, csv_name))
+
+    x = data_set[['center', 'left', 'right']].values
+    y = data_set['steering'].values
 
     x_train, x_valid, y_train, y_valid = train_test_split(x, y, test_size=valid_size_frac)
 

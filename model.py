@@ -1,4 +1,5 @@
 import os
+from load_data import *
 from build_model import *
 from inspect import currentframe
 from keras.models import Sequential
@@ -22,11 +23,13 @@ if __name__ == '__main__':
     print("=" * 20)
     print('Parameters')
     data_dir = input_param('data direction', 'carnd_p3' + os.sep + 'data')
+    csv_name = input_param('csv name', 'driving_log.csv')
     input_shape = input_param('input shape', (160, 320, 3))
     valid_frac = input_param('proportion of validation', 0.2)
     print("=" * 20)
 
-    print("Build model")
+    create_data_set(data_dir, csv_name, valid_frac)
+
     build_model(input_shape)
 
     main()
