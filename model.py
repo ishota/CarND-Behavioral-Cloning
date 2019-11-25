@@ -1,9 +1,6 @@
 from load_data import *
 from build_model import *
 from get_generator import *
-from inspect import currentframe
-from keras.models import Sequential
-from keras.layers import Lambda, Conv2D, Dropout, Flatten, Dense
 
 
 def train_model():
