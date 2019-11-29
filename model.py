@@ -21,7 +21,7 @@ def main():
     print("=" * 20)
     print('Parameters')
     print("-" * 20)
-    data_dir     = input_param('data direction', 'carnd_p3' + os.sep + 'data')
+    data_dir     = input_param('data direction', os.sep + 'opt' + os.sep + 'carnd_p3' + os.sep + 'data')
     csv_name     = input_param('csv name', 'driving_log.csv')
     input_shape  = input_param('input shape', (160, 320, 3))
     valid_frac   = input_param('proportion of validation', 0.2)

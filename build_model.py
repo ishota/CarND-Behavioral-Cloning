@@ -23,7 +23,7 @@ def build_model(shape):
 
 def build_callbacks():
     callbacks = [
-        tf.keras.callbacks.ModelCheckpoint('model}.h5',
+        tf.keras.callbacks.ModelCheckpoint('model.h5',
                                            monitor='val_loss',
                                            save_best_only=True,
                                            mode='auto'),
