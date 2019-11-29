@@ -1,2 +1,5 @@
 carnd_p3*
 *.jpg
+/logs/
+*.h5
+/__pycache__/
