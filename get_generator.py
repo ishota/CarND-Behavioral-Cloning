@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.image as mping
 
 
-def preprocess_image():
+def preprocess_image(image):
     pass
 
 

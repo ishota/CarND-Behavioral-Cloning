@@ -7,17 +7,19 @@ def train_model():
     pass
 
 
-def input_param(names, value):
+def input_param(name, value):
     """
-    :param names:
-    :param value:
-    :return:
+    Display input name and value for checking.
+    :param name: parameter name.
+    :param value: parameter value.
+    :return: value.
     """
-    print('{} = {}'.format(names, value))
+    print('{} = {}'.format(name, value))
     return value
 
 
 def main():
+    # Set parameters.
     print("=" * 20)
     print('Parameters')
     print("-" * 20)
@@ -33,11 +35,17 @@ def main():
     valid_steps  = input_param('valid per steps', 20)
     print("=" * 20)
 
+    # Create data set from data directory.
     x_train, y_train, x_valid, y_valid = create_data_set(data_dir, csv_name, valid_frac)
 
+    # Build and compile model.
     model = build_model(input_shape)
-    model_callbacks = build_callbacks()
     model.compile(loss=model_loss, optimizer=model_opti)
+
+    # Define callbacks.
+    model_callbacks = build_callbacks()
+
+    # Learn using python generator.
     model.fit_generator(generate_batch(data_dir, x_train, y_train, input_shape, batch_size=batch_size),
                         steps_per_epoch=per_epoch,
                         epochs=train_epochs,
