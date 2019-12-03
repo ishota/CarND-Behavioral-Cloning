@@ -3,10 +3,6 @@ from build_model import *
 from get_generator import *
 
 
-def train_model():
-    pass
-
-
 def input_param(name, value):
     """
     Display input name and value for checking.
@@ -29,7 +25,7 @@ def main():
     valid_frac   = input_param('proportion of validation', 0.2)
     model_loss   = input_param('loss function', 'mse')
     model_opti   = input_param('model optimizer', 'adam')
-    batch_size   = input_param('batch size', 32)
+    batch_size   = input_param('batch size', 64)
     per_epoch    = input_param('steps per epoch', 100)
     train_epochs = input_param('training epochs', 10)
     valid_steps  = input_param('valid per steps', 20)

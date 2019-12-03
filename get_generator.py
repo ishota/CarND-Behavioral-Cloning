@@ -1,10 +1,20 @@
 import os
 import numpy as np
 import matplotlib.image as mping
+import tensorflow as tf
 
 
-def preprocess_image(image):
-    pass
+def preprocess_image(images):
+    if np.random.rand() < 0.2:
+        images = tf.image.random_saturation(images, lower=0.6, upper=1.4)
+    if np.random.rand() < 0.2:
+        images = tf.image.random_contrast(images, lower=1.5, upper=2.0)
+    if np.random.rand() < 0.2:
+        images = tf.image.random_hue(images, max_delta=0.2)
+    if np.random.rand() < 0.2:
+        images = tf.image.random_hue(images, max_delta=0.2)
+    print(images)
+    return images
 
 
 def generate_batch(data_dir, x_train, y_train, image_shape, batch_size=64):
@@ -20,6 +30,7 @@ def generate_batch(data_dir, x_train, y_train, image_shape, batch_size=64):
             i += 1
             if i == batch_size:
                 break
+        #images = preprocess_image(images)
         yield images, steers
 
 
