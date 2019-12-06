@@ -26,9 +26,9 @@ def main():
     model_loss   = input_param('loss function', 'mse')
     model_opti   = input_param('model optimizer', 'adam')
     batch_size   = input_param('batch size', 64)
-    per_epoch    = input_param('steps per epoch', 100)
-    train_epochs = input_param('training epochs', 10)
-    valid_steps  = input_param('valid per steps', 20)
+    per_epoch    = input_param('steps per epoch', 200)
+    train_epochs = input_param('training epochs', 20)
+    valid_steps  = input_param('valid per steps', 50)
     print("=" * 20)
 
     # Create data set from data directory.

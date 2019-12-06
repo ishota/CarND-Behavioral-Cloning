@@ -1,20 +1,20 @@
 import os
+import cv2
 import numpy as np
 import matplotlib.image as mping
 import tensorflow as tf
 
 
-def preprocess_image(images):
+def processed_data(image, steering):
     if np.random.rand() < 0.2:
-        images = tf.image.random_saturation(images, lower=0.6, upper=1.4)
+        image = cv2.cvtColor(image, cv2.COLOR_RGB2YUV)
+    if np.random.rand() < 0.3:
+        image = cv2.flip(image, 1)
+        steering = -steering
     if np.random.rand() < 0.2:
-        images = tf.image.random_contrast(images, lower=1.5, upper=2.0)
-    if np.random.rand() < 0.2:
-        images = tf.image.random_hue(images, max_delta=0.2)
-    if np.random.rand() < 0.2:
-        images = tf.image.random_hue(images, max_delta=0.2)
-    print(images)
-    return images
+        image = cv2.GaussianBlur(image, (5, 5), 0)
+        
+    return image, steering
 
 
 def generate_batch(data_dir, x_train, y_train, image_shape, batch_size=64):
@@ -25,12 +25,18 @@ def generate_batch(data_dir, x_train, y_train, image_shape, batch_size=64):
         for index in np.random.permutation(x_train.shape[0]):
             image = mping.imread((os.path.join(data_dir, x_train[index, 0].strip())))
             steering_angle = y_train[index]
-            images[i] = image
-            steers[i] = steering_angle
-            i += 1
+            
+            if np.abs(steering_angle) > 0.1:
+                images[i], steers[i] = processed_data(image, steering_angle)
+                i += 1
+            else:
+                if np.random.rand() < 0.3:
+                    images[i], steers[i] = processed_data(image, steering_angle)
+                    i += 1
+                
             if i == batch_size:
                 break
-        #images = preprocess_image(images)
+                
         yield images, steers
 
 
