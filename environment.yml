@@ -1,7 +1,8 @@
 name: tf-gpu
 channels:
-  - conda-forge
+  - menpo
   - anaconda
+  - conda-forge
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -12,7 +13,7 @@ dependencies:
   - astor=0.7.1=py35_0
   - blas=1.0=mkl
   - bzip2=1.0.8=h516909a_1
-  - ca-certificates=2019.10.16=0
+  - ca-certificates=2019.11.27=0
   - certifi=2018.8.24=py35_1
   - cffi=1.11.5=py35h5e8e0c9_1
   - chardet=3.0.4=py35_1
@@ -74,6 +75,7 @@ dependencies:
   - numpy=1.15.2=py35h1d66e8a_0
   - numpy-base=1.15.2=py35h81de0dd_0
   - olefile=0.46=py_0
+  - opencv3=3.1.0=py35_0
   - openh264=1.8.0=hdbcaa40_1000
   - openssl=1.0.2t=h7b6447c_1
   - pandas=0.23.4=py35h04863e7_0
