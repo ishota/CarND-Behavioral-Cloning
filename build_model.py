@@ -15,9 +15,9 @@ def build_model(shape):
     model.add(tf.keras.layers.Conv2D(64, (5, 5), activation='relu'))
     model.add(tf.keras.layers.Dropout(0.2))
     model.add(tf.keras.layers.Flatten())
-    model.add(tf.keras.layers.Dense(100, activation='relu'))
-    model.add(tf.keras.layers.Dense(50, activation='relu'))
-    model.add(tf.keras.layers.Dense(10, activation='relu'))
+    model.add(tf.keras.layers.Dense(100, kernel_regularizer=tf.keras.regularizers.l2(0.003), activation='relu'))
+    model.add(tf.keras.layers.Dense(50, kernel_regularizer=tf.keras.regularizers.l2(0.002), activation='relu'))
+    model.add(tf.keras.layers.Dense(10, kernel_regularizer=tf.keras.regularizers.l2(0.001), activation='relu'))
     model.add(tf.keras.layers.Dense(1))
     model.summary()
 
