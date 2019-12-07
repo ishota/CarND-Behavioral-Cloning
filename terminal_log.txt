@@ -1,0 +1,102 @@
+====================
+Parameters
+--------------------
+data direction = /opt/carnd_p3/data
+csv name = driving_log.csv
+input shape = (160, 320, 3)
+proportion of validation = 0.2
+loss function = mse
+model optimizer = adam
+batch size = 64
+steps per epoch = 200
+training epochs = 20
+valid per steps = 50
+====================
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lambda (Lambda)              (None, 160, 320, 3)       0         
+_________________________________________________________________
+cropping2d (Cropping2D)      (None, 90, 320, 3)        0         
+_________________________________________________________________
+conv2d (Conv2D)              (None, 43, 158, 24)       1824      
+_________________________________________________________________
+dropout (Dropout)            (None, 43, 158, 24)       0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 20, 77, 36)        21636     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 20, 77, 36)        0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 8, 37, 48)         43248     
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 8, 37, 48)         0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 4, 33, 64)         76864     
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 4, 33, 64)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 8448)              0         
+_________________________________________________________________
+dense (Dense)                (None, 100)               844900    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                5050      
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 994,043
+Trainable params: 994,043
+Non-trainable params: 0
+_________________________________________________________________
+2019-12-07 02:54:17.107020: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-12-07 02:54:17.181630: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:897] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-12-07 02:54:17.182394: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.09GiB
+2019-12-07 02:54:17.182437: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0
+2019-12-07 02:54:17.513345: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-07 02:54:17.513434: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 
+2019-12-07 02:54:17.513450: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N 
+2019-12-07 02:54:17.514085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10750 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+Epoch 1/20
+200/200 [==============================] - 65s 323ms/step - loss: 0.0213 - val_loss: 0.0193
+Epoch 2/20
+200/200 [==============================] - 53s 265ms/step - loss: 0.0153 - val_loss: 0.0169
+Epoch 3/20
+200/200 [==============================] - 52s 262ms/step - loss: 0.0157 - val_loss: 0.0172
+Epoch 4/20
+200/200 [==============================] - 53s 264ms/step - loss: 0.0138 - val_loss: 0.0153
+Epoch 5/20
+200/200 [==============================] - 52s 261ms/step - loss: 0.0143 - val_loss: 0.0145
+Epoch 6/20
+200/200 [==============================] - 54s 269ms/step - loss: 0.0136 - val_loss: 0.0169
+Epoch 7/20
+200/200 [==============================] - 54s 270ms/step - loss: 0.0134 - val_loss: 0.0141
+Epoch 8/20
+200/200 [==============================] - 52s 261ms/step - loss: 0.0136 - val_loss: 0.0157
+Epoch 9/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0132 - val_loss: 0.0156
+Epoch 10/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0131 - val_loss: 0.0141
+Epoch 11/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0125 - val_loss: 0.0155
+Epoch 12/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0117 - val_loss: 0.0149
+Epoch 13/20
+200/200 [==============================] - 53s 264ms/step - loss: 0.0126 - val_loss: 0.0144
+Epoch 14/20
+200/200 [==============================] - 52s 261ms/step - loss: 0.0118 - val_loss: 0.0137
+Epoch 15/20
+200/200 [==============================] - 52s 262ms/step - loss: 0.0111 - val_loss: 0.0143
+Epoch 16/20
+200/200 [==============================] - 52s 262ms/step - loss: 0.0116 - val_loss: 0.0152
+Epoch 17/20
+200/200 [==============================] - 52s 261ms/step - loss: 0.0114 - val_loss: 0.0147
+Epoch 18/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0107 - val_loss: 0.0145
+Epoch 19/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0101 - val_loss: 0.0157
+Epoch 20/20
+200/200 [==============================] - 53s 263ms/step - loss: 0.0101 - val_loss: 0.0142
