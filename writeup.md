@@ -1,6 +1,21 @@
 # **Behavioral Cloning** 
 
-**Behavioral Cloning Project**
+[//]: # (Image References)
+
+[jpg1]: ./picture/center_2016_12_01_13_30_48_287.jpg "test jpg1"
+[jpg2]: ./picture/center_2016_12_01_13_33_56_606.jpg "test jpg2"
+[image2]: ./examples/placeholder.png "Grayscaling"
+[image3]: ./examples/placeholder_small.png "Recovery Image"
+[image4]: ./examples/placeholder_small.png "Recovery Image"
+[image5]: ./examples/placeholder_small.png "Recovery Image"
+[image6]: ./examples/placeholder_small.png "Normal Image"
+[image7]: ./examples/placeholder_small.png "Flipped Image"
+
+
+## Writeup
+
+This is a project for Udacity lesson of Self-driving car engineer.
+I created a self-driving car that is able to drive araound the lake course by behavioral cloning.
 
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
@@ -8,6 +23,18 @@ The goals / steps of this project are the following:
 * Train and validate the model with a training and validation set
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
+
+## Collected data
+
+I used a carnd_p3 behavior data prepared by Udacity.
+In the behavior data, a steering angle for the image showing the front center, front right and front left of the car is recorded.
+The steering angle that circulate without departing from the course are recorded in two directions including reverse rotation.
+These following two images were actually used for model fitting.
+
+![alt text][jpg1]
+![alt text][jpg2]
+
+## Proposed model
 
 ## Start Guied
 
