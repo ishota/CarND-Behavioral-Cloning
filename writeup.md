@@ -36,6 +36,66 @@ These following two images were actually used for model fitting.
 
 ## Proposed model
 
+I used N.N. model for cloning behaviror of data set.
+I showed a detail of used model below.
+
+```python
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lambda (Lambda)              (None, 160, 320, 3)       0         
+_________________________________________________________________
+cropping2d (Cropping2D)      (None, 90, 320, 3)        0         
+_________________________________________________________________
+conv2d (Conv2D)              (None, 43, 158, 24)       1824      
+_________________________________________________________________
+dropout (Dropout)            (None, 43, 158, 24)       0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 20, 77, 36)        21636     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 20, 77, 36)        0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 8, 37, 48)         43248     
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 8, 37, 48)         0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 4, 33, 64)         76864     
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 4, 33, 64)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 8448)              0         
+_________________________________________________________________
+dense (Dense)                (None, 100)               844900    
+_________________________________________________________________
+dense_1 (Dense)              (None, 50)                5050      
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 994,043
+Trainable params: 994,043
+Non-trainable params: 0
+_________________________________________________________________
+```
+
+The first lambda layer outputs a normalized images to prevent the so-colled vanishing gradients.
+The second layer outputs an image cropped from the top and bottom of the image.
+From the therd layer to the sixth layer, there are convolutional layers to capture small features in an image.
+In these convolutional layers, I used dropout technich to suppress over fitting.
+I put a flatten layer to connect convolutional layer to all connected layer.
+Finaly, The model output a steering angle.
+
+### Training parameters
+
+* Input image shape is 160 x 320 x 3.
+* loss function is mean square error.
+* Optimize function is "adam".
+* Batch size is 64.
+
+## Result
+
+
 ## Start Guied
 
 You can use the environment.yml to set anaconda environment. 
