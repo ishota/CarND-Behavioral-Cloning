@@ -4,6 +4,7 @@
 
 [jpg1]: ./picture/center_2016_12_01_13_30_48_287.jpg "test jpg1"
 [jpg2]: ./picture/center_2016_12_01_13_33_56_606.jpg "test jpg2"
+[gif1]: ./run1.gif "run1 gif"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -95,6 +96,7 @@ Finaly, The model output a steering angle.
 
 ## Result
 
+![alt text][jpg2]
 
 ## Start Guied
 
