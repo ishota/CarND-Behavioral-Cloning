@@ -96,7 +96,7 @@ Finaly, The model output a steering angle.
 
 ## Result
 
-![alt text][jpg2]
+![alt text][gif1]
 
 ## Start Guied
 
