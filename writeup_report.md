@@ -28,6 +28,15 @@ These following two images were actually used for model fitting.
 ![alt text][jpg1]
 ![alt text][jpg2]
 
+## Preprocess data
+
+I preprocessed data for learning successfuly.
+
+* RGB to YUV conversion: Learning not only by color but also by luminance and color difference, aiming at increasing data and generalization of data
+* Invert image and steering: To increase training data when turning.
+* Blur an image with GaussianBlur: To increase generalization performance.
+* Probably not adopted when steer is small: Many images with a steer value of 0 in which caused over-fitting.
+
 ## Proposed model
 
 I used N.N. model for cloning behaviror of data set.
