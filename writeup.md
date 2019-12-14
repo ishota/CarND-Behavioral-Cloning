@@ -99,6 +99,7 @@ Finaly, The model output a steering angle.
 An output result file is run1.mp4.
 I put here a gif file that shows the results.
 You can find that no tire leave the drivable portion of the trach surface.
+
 ![alt text][gif1]
 
 And here I show a history of learning.
