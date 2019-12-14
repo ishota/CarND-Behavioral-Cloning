@@ -74,8 +74,8 @@ dense_2 (Dense)              (None, 10)                510
 _________________________________________________________________
 dense_3 (Dense)              (None, 1)                 11        
 =================================================================
-Total params: 994,043
-Trainable params: 994,043
+Total params: 994043
+Trainable params: 994043
 Non-trainable params: 0
 _________________________________________________________________
 ```
@@ -96,7 +96,36 @@ Finaly, The model output a steering angle.
 
 ## Result
 
+An output result file is run1.mp4.
+I put here a gif file that shows the results.
+You can find that no tire leave the drivable portion of the trach surface.
 ![alt text][gif1]
+
+And here I show a history of learning.
+It can be seen that the loss values ​​of training data and validation data are gradually decreasing and converged.
+
+```python
+Epoch 1/20  loss: 0.0213 - val_loss: 0.0193
+Epoch 2/20  loss: 0.0153 - val_loss: 0.0169
+Epoch 3/20  loss: 0.0157 - val_loss: 0.0172
+Epoch 4/20  loss: 0.0138 - val_loss: 0.0153
+Epoch 5/20  loss: 0.0143 - val_loss: 0.0145
+Epoch 6/20  loss: 0.0136 - val_loss: 0.0169
+Epoch 7/20  loss: 0.0134 - val_loss: 0.0141
+Epoch 8/20  loss: 0.0136 - val_loss: 0.0157
+Epoch 9/20  loss: 0.0132 - val_loss: 0.0156
+Epoch 10/20 loss: 0.0131 - val_loss: 0.0141
+Epoch 11/20 loss: 0.0125 - val_loss: 0.0155
+Epoch 12/20 loss: 0.0117 - val_loss: 0.0149
+Epoch 13/20 loss: 0.0126 - val_loss: 0.0144
+Epoch 14/20 loss: 0.0118 - val_loss: 0.0137
+Epoch 15/20 loss: 0.0111 - val_loss: 0.0143
+Epoch 16/20 loss: 0.0116 - val_loss: 0.0152
+Epoch 17/20 loss: 0.0114 - val_loss: 0.0147
+Epoch 18/20 loss: 0.0107 - val_loss: 0.0145
+Epoch 19/20 loss: 0.0101 - val_loss: 0.0157
+Epoch 20/20 loss: 0.0101 - val_loss: 0.0142
+```
 
 ## Start Guied
 
