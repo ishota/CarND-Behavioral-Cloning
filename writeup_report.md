@@ -4,7 +4,7 @@
 
 [jpg1]: ./picture/center_2016_12_01_13_30_48_287.jpg "test jpg1"
 [jpg2]: ./picture/center_2016_12_01_13_33_56_606.jpg "test jpg2"
-[gif1]: ./run1.gif "run1 gif"
+[gif1]: ./video.gif "video gif"
 
 ## Writeup
 
@@ -92,13 +92,14 @@ Finaly, The model output a steering angle.
 ### Training parameters
 
 * Input image shape is 160 x 320 x 3.
+* Divided into training data and validation data at a ratio of 8 to 2.
 * loss function is mean square error.
 * Optimize function is "adam".
 * Batch size is 64.
 
 ## Result
 
-An output result file is run1.mp4.
+An output result file is video.mp4.
 I put here a gif file that shows the results.
 You can find that no tire leave the drivable portion of the trach surface.
 

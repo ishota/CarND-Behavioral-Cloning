@@ -3,8 +3,9 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 You can get a self-driving car that runs without departing from the lane.
+Please check a details of my solution in ***writeup_report.md***.
 
-[gif1]: ./run1.gif "run1 gif"
+[gif1]: ./video.gif "video gif"
 ![alt text][gif1]
 
 ## Description
@@ -35,7 +36,7 @@ Test the N.N. model in Udacity's car simulator.
 python drive.py model.h5 run1
 ```
 
-A driving behavior is saved in run1.
+A driving behavior is saved in video.
 You can create a mp4 video file.
 
 ```bash
