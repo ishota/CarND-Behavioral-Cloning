@@ -3,7 +3,7 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 You can get a self-driving car that runs without departing from the lane.
-Please check a details of my solution in ***writeup_report.md***.
+Please check a details of my solution in [***writeup_report.md***](https://github.com/ishota/CarND-Behavioral-Cloning/blob/master/writeup_report.md).
 
 [gif1]: ./video.gif "video gif"
 ![alt text][gif1]
