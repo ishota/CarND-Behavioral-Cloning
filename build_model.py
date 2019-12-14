@@ -2,6 +2,11 @@ import tensorflow as tf
 
 
 def build_model(shape):
+    """
+    Build model.
+    :param shape: images shape.
+    :return: mmodel.
+    """
 
     model = tf.keras.models.Sequential()
     model.add(tf.keras.layers.Lambda(lambda x: x/127.5-1.0, input_shape=shape))
@@ -25,6 +30,12 @@ def build_model(shape):
 
 
 def build_callbacks():
+    """
+    Return the callback function. 
+    ModelCheckpoint save model if the model minimize validation loss.
+    TensorBoard save values while learning.
+    :return: callbacks.
+    """
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint('model.h5',
                                            monitor='val_loss',

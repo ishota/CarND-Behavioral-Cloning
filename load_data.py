@@ -5,11 +5,11 @@ from sklearn.model_selection import train_test_split
 
 def create_data_set(data_dir, csv_name, valid_size_frac):
     """
-
-    :param data_dir:
-    :param csv_name:
-    :param valid_size_frac:
-    :return:
+    # Import image folder and csv file to create dataset.
+    :param data_dir: directory of data.
+    :param csv_name: Image file and the corresponding steering angle. 
+    :param valid_size_frac: Ratio of dividing the data set into validation data.
+    :return: x_train, x_valid, y_train, y_valid.
     """
 
     data_set = pd.read_csv(os.path.join(data_dir, csv_name))

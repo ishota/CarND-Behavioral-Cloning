@@ -15,7 +15,11 @@ def input_param(name, value):
 
 
 def main():
-    # Set parameters.
+    """
+    Main function
+    """
+
+    # Set parameters.(Display parameters on console)
     print("=" * 20)
     print('Parameters')
     print("-" * 20)
